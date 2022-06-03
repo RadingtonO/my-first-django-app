@@ -1,0 +1,10 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<h2 align="center" style="position: relative; color: #007ba7;">Категория "{{ category }}"</h2>
+{% for article in articles %}
+    <hr style="margin: 5%; color: #8B4513;">
+    <h2 style="margin: 5%;"><a href="{% url 'results' article.id %}">{{ article.title }}</a></h2>
+    <p style="margin: 5%;">{{ article.content|truncatewords:15 }}</p>
+{% endfor %}
+{% endblock %}

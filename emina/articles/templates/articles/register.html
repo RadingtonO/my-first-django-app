@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: #007ba7;
+        }
+    </style>
+</head>
+<body>
+<div style="position: absolute; width: 50%; left: 25%; border: 2px solid black; background: #B0E0E6;">
+    <h1 align="center" style="margin: 5%;">Регистрация пользователя</h1>
+    <form style="margin: 5%;" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div align="center"><input style=" width: 150px; height: 30px;" type="submit"
+        value="Зарегистрировать"></div>
+<div align="center">
+<button style="margin-top: 5%; width: 100px; height: 40px;"><a href="{% url 'main' %}">На главную</a></button>
+</div>
+</form>
+</div>
+</body>
+</html>

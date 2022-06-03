@@ -1,0 +1,10 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<p align="center"><img src="{{ article.image.url }}"></p>
+<hr style="margin: 5%; color: #8B4513;">
+<h1  style="margin: 5%;">{{ article.title }}</h1>
+<p style="margin: 5%;">{{ article.content }}</p>
+<hr style="margin: 5%; color: #8B4513;">
+<p style="margin: 5%;">{{ article.pub_date }}</p>
+{% endblock %}

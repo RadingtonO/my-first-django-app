@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>EMINA</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'articles/css/style.css' %}">
+    <style>
+        body {
+            background: #007ba7;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute; top: 5px; left: 1%; right: 1%; height: 55px; border: 2px solid black;
+    background: #B0E0E6;">
+        <div style="position: absolute; right: 1%; width: 50%;">
+            <p align="right"><a  href="{% url 'login' %}">Войти</a> | <a href="{% url 'register' %}">Зарегистрироваться
+            </a></p>
+        </div>
+    </div>
+    <div style="position: absolute; left: 1%; top: 70px; width: 200px; height: 550px; border: 2px solid black;
+    background: #B0E0E6;">
+        <ul>
+            <h3><a href="{% url 'main' %}">На главную</a></h3>
+            <p>Категории:</p>
+            {% for category in categories %}
+            <hr style="position: relative; left: -5%; color: #8B4513;">
+            <a style="color: #8B4513;" href="{% url 'category' category.id %}">{{ category.title }}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div style="position: absolute; left: 25%; top: 70px; width: 60%; background: #B0E0E6; border: 2px solid black;">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
